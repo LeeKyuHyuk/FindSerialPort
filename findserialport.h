@@ -20,6 +20,11 @@ private slots:
 
 private:
     Ui::FindSerialPort *ui;
+
+    enum Columns
+    {
+        NAME, DESCRIPTION, MANUFACTURER
+    };
 };
 
 #endif // FINDSERIALPORT_H
