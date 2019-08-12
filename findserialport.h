@@ -25,6 +25,8 @@ private:
     {
         NAME, DESCRIPTION, MANUFACTURER
     };
+
+    void resizeEvent(QResizeEvent*);
 };
 
 #endif // FINDSERIALPORT_H

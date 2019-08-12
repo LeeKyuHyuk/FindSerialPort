@@ -13,6 +13,7 @@ FindSerialPort::FindSerialPort(QWidget *parent) :
     tableHeader << "Name" << "Description" << "Manufacturer";
     ui->tableWidget->setColumnCount(3);
     ui->tableWidget->setHorizontalHeaderLabels(tableHeader);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     on_actionRefresh_triggered();
 }
 
@@ -33,4 +34,9 @@ void FindSerialPort::on_actionRefresh_triggered()
         ui->tableWidget->setItem(index, MANUFACTURER, new QTableWidgetItem(info.manufacturer()));
 
     }
+}
+
+void FindSerialPort::resizeEvent(QResizeEvent *)
+{
+    ui->tableWidget->setFixedSize(this->width(), this->height() - 40);
 }
