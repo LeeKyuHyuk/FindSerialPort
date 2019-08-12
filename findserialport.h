@@ -15,6 +15,9 @@ public:
     explicit FindSerialPort(QWidget *parent = nullptr);
     ~FindSerialPort();
 
+private slots:
+    void on_actionRefresh_triggered();
+
 private:
     Ui::FindSerialPort *ui;
 };
